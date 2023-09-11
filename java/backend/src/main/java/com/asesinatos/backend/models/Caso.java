@@ -26,14 +26,8 @@ public class Caso {
     @Getter
     @Setter
     private String lugar;
-    /*
-     * De persona: asesinado_id y asesino_id
-     * De Forma: forma_id
-     * De lugar: string lugar
-     * 
-     */
     
-     @OneToMany(fetch = FetchType.EAGER)
+     @OneToMany(fetch = FetchType.EAGER)//no me preguntes que no se
      @JoinColumn(name = "persona_id")
      private Persona asesinado_id;
 
