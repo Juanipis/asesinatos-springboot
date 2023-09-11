@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,15 +27,15 @@ public class Caso {
     @Setter
     private String lugar;
     
-     @OneToMany(fetch = FetchType.EAGER)//no me preguntes que no se
-     @JoinColumn(name = "persona_id")
-     private Persona asesinado_id;
+    @ManyToOne(fetch = FetchType.LAZY)//no me preguntes que no se
+    @JoinColumn(name = "asesinado_id")
+    private Persona asesinado_id;
 
-     @OneToMany(fetch = FetchType.EAGER)
-     @JoinColumn(name = "persona_id")
-     private Persona asesino_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "asesino_id")
+    private Persona asesino_id;
 
-      @OneToMany(mappedBy = "casos")
-     @JoinColumn(name = "forma_asesinato_id")
-     private FormaAsesinato forma_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "forma_asesinato_id")
+    private FormaAsesinato forma_id;
 }
