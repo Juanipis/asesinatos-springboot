@@ -35,3 +35,6 @@ spring.jpa.show-sql=
 
 ## Diagrama de clases
 ![Diagrama de clases](https://github.com/Juanipis/asesinatos-springboot/blob/main/backend_diagram_class.png?raw=true)
+
+## Diagrama entidad relación
+![Diagrama Entidad relación](https://github.com/Juanipis/asesinatos-springboot/blob/main/diagrama_entidad_relacion.png?raw=true)
