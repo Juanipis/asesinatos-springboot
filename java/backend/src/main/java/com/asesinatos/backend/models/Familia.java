@@ -27,9 +27,7 @@ public class Familia implements Comparable<Familia>, Serializable{
     private String apellidos;
 
     @Column
-    @OneToMany(mappedBy = "familia")
-    @Getter
-    @Setter
+    @OneToMany()
     private List<Victima> victimas;
 
     @Override

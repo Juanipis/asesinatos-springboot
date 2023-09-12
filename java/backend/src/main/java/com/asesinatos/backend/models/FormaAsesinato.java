@@ -27,13 +27,11 @@ public class FormaAsesinato implements Comparable<FormaAsesinato>, Serializable{
     private String forma;
 
     @Column
-    @OneToMany(mappedBy = "formaAsesinato")
-    @Getter
-    @Setter
+    @OneToMany()
     private List<Victima> victimas;
 
     @Override
     public int compareTo(FormaAsesinato arg0) {
-        return this.getVictimas().size() - arg0.getVictimas().size();
+        return this.getForma().compareTo(arg0.getForma());
     }
 }

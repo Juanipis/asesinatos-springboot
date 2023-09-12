@@ -24,13 +24,22 @@ public class FormaAsesinatoService implements IFormaAsesinatoService {
     }
 
     @Override
-    public void deleteById(Long id) {
-        formaAsesinatoDAO.deleteById(id);
-    }
-
-    @Override
     public FormaAsesinato save(FormaAsesinato formaAsesinato) {
         return formaAsesinatoDAO.save(formaAsesinato);
     }
 
+    @Override
+    public FormaAsesinato updateFormaAsesinato(Long id, FormaAsesinato formaAsesinato) {
+        FormaAsesinato toUpdate = formaAsesinatoDAO.findById(id).orElse(null);
+        if (toUpdate != null){
+            toUpdate.setForma(formaAsesinato.getForma());
+            formaAsesinatoDAO.save(toUpdate);
+        }
+        return toUpdate;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        formaAsesinatoDAO.deleteById(id);
+    }
 }

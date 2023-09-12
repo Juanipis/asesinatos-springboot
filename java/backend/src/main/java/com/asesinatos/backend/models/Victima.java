@@ -2,6 +2,8 @@ package com.asesinatos.backend.models;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,14 +29,14 @@ public class Victima implements Comparable<Victima>, Serializable{
     @Setter
     private String nombre;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "familia_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "familia_id")
     @Getter
     @Setter
     private Familia familia;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "forma_asesinato_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "forma_asesinato_id")
     @Getter
     @Setter
     private FormaAsesinato formaAsesinato;

@@ -9,7 +9,11 @@ public interface IFamiliaService {
 
     public Familia findById(Long id);
 
-    public void deleteById(Long id);
+    public List<Familia> findByApellido(String apellido);
 
     public Familia save(Familia familia);
+
+    public Familia updateFamilia(Long id, Familia familia);
+
+    public void deleteById(Long id);
 }
