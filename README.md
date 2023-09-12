@@ -31,4 +31,7 @@ spring.jpa.properties.hibernate.dialect=
 spring.jpa.hibernate.ddl-auto=
 spring.jpa.show-sql=
 ```
-2. Listo, ya puedes correr springbooy
+2. Listo, ya puedes correr springboot
+
+## Diagrama de clases
+![Diagrama de clases](https://github.com/Juanipis/asesinatos-springboot/blob/main/backend_diagram_class.png?raw=true)
