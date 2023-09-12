@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.asesinatos.backend.dao.IVictimaDAO;
-import com.asesinatos.backend.models.Familia;
 import com.asesinatos.backend.models.Victima;
 
 @Service
