@@ -8,7 +8,9 @@ public interface IFormaAsesinatoService {
 
     public FormaAsesinato findById(Long id);
 
-    public void deleteById(Long id);
-
     public FormaAsesinato save(FormaAsesinato formaAsesinato);
+
+    public FormaAsesinato updateFormaAsesinato(Long id, FormaAsesinato formaAsesinato);
+
+    public void deleteById(Long id);
 }

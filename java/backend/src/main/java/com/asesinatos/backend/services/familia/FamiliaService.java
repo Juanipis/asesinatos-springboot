@@ -24,13 +24,28 @@ public class FamiliaService implements IFamiliaService {
     }
 
     @Override
-    public void deleteById(Long id) {
-        familiaDAO.deleteById(id);
+    public List<Familia> findByApellido(String apellido) {
+        return familiaDAO.findByApellidos(apellido);
     }
 
     @Override
     public Familia save(Familia familia) {
         return familiaDAO.save(familia);
+    }
+
+    @Override
+    public Familia updateFamilia(Long id, Familia familia) {
+        Familia toUpdate = familiaDAO.findById(id).orElse(null);
+        if (toUpdate != null){
+            toUpdate.setApellidos(familia.getApellidos());
+            familiaDAO.save(toUpdate);
+        }
+        return toUpdate;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        familiaDAO.deleteById(id);
     }
 
 }
