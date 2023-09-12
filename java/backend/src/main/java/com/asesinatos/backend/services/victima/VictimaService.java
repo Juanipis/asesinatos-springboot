@@ -54,7 +54,6 @@ public class VictimaService implements IVictimaService {
         Victima toUpdate = victimaDAO.findById(id).orElse(null);
         if (toUpdate != null){
             toUpdate.setNombre(victima.getNombre());
-            toUpdate.setFamilia(victima.getFamilia());
             toUpdate.setLugar(victima.getLugar());
             victimaDAO.save(toUpdate);
         }

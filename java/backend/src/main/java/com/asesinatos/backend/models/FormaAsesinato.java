@@ -27,7 +27,7 @@ public class FormaAsesinato implements Comparable<FormaAsesinato>, Serializable{
     private String forma;
 
     @Column
-    @OneToMany()
+    @OneToMany()    
     private List<Victima> victimas;
 
     @Override
