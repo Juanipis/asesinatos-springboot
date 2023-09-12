@@ -30,6 +30,7 @@ public class FamiliaService implements IFamiliaService {
 
     @Override
     public Familia save(Familia familia) {
+        System.out.println("Se llama al servicio");
         return familiaDAO.save(familia);
     }
 
